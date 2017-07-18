@@ -1,0 +1,63 @@
+<h2>Leads</h2>
+{{input placeholder="Search.. first name" enter="search"}}
+<hr>
+<div class="table-wrapper">
+    <table class="table table-striped latest-data">
+      <thead>
+        <tr>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+          <th>HEADER</th>
+        </tr>
+      </thead>
+      {{#vertical-collection
+       tagName="tbody"
+       content=filteredList
+       defaultHeight=37
+       bufferSize=0.5
+       alwaysUseDefaultHeight=true
+       containerSelector=".table-wrapper"
+       key="id"
+       as |lead|
+     }}
+       <td>{{input value=lead.firstName}}</td>
+       <td>{{input value=lead.lastName}}</td>
+       <td>{{input value=lead.manualVerifiedStatus}}</td>
+       <td>{{input value=lead.createdDate}}</td>
+       <td>{{lead.modifiedDate}}</td>
+       <td>{{lead.leadType}}</td>
+       <td>{{lead.campaignName}}</td>
+       <td>{{lead.campaignStatus}}</td>
+       <td>{{lead.primaryEmail}}</td>
+       <td>{{lead.modifiedDate}}</td>
+       <td>{{lead.leadType}}</td>
+       <td>{{lead.campaignName}}</td>
+       <td>{{lead.modifiedDate}}</td>
+       <td>{{lead.leadType}}</td>
+       <td>{{lead.campaignName}}</td>
+       <td>{{lead.campaignStatus}}</td>
+       <td>{{lead.primaryEmail}}</td>
+       <td>{{lead.modifiedDate}}</td>
+       <td>{{lead.leadType}}</td>
+       <td>{{lead.campaignName}}</td>
+       <td>{{lead.modifiedDate}}</td>
+       <td>{{lead.leadType}}</td>
+       <td>{{lead.campaignName}}</td>
+       <td>{{lead.campaignStatus}}</td>
+       <td>{{lead.primaryEmail}}</td>
+       <td>{{lead.modifiedDate}}</td>
+       <td>{{lead.leadType}}</td>
+       <td>{{lead.campaignName}}</td>
+     {{/vertical-collection}}
+    </table>
+</div>
+{{outlet}}
