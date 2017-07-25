@@ -2,8 +2,8 @@ import Ember from 'ember'
 import config from './config/environment'
 
 const Router = Ember.Router.extend({
-  location: 'hash',
-  rootURL: ENV.rootURL
+  location: config.locationType,
+  rootURL: config.rootURL
 })
 
 Router.map(function () {
