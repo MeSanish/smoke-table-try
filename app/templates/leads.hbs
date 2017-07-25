@@ -1,62 +1,65 @@
-<h2>Leads</h2>
-{{input placeholder="Search.. first name" enter="search"}}
-<hr>
+<h2>All Leads</h2>
+<div class="input-group input-group-lg col-xs-offset-1 search">
+{{input placeholder="Search By First name..." enter="search" class="form-control"}}
+</div>
+{{!-- <table class="table table-head table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Manual Verified Status</th>
+      <th>Created Date</th>
+      <th>Modified Date</th>
+      <th>Lead Type</th>
+      <th>Campaign Name</th>
+      <th>Campaign Status</th>
+      <th>Primary Email</th>
+      <th>Unsubscribed</th>
+      <th>Bounce Back</th>
+      <th>Delivered</th>
+    </tr>
+  </thead>
+</table> --}}
 <div class="table-wrapper">
-    <table class="table table-striped latest-data">
+    <table class="table table-striped table-bordered">
       <thead>
         <tr>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
-          <th>HEADER</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Manual Verified Status</th>
+          <th>Created Date</th>
+          <th>Modified Date</th>
+          <th>Lead Type</th>
+          <th>Campaign Name</th>
+          <th>Campaign Status</th>
+          <th>Primary Email</th>
+          <th>Unsubscribed</th>
+          <th>Bounce Back</th>
+          <th>Delivered</th>
         </tr>
       </thead>
       {{#vertical-collection
        tagName="tbody"
        content=filteredList
-       defaultHeight=37
-       bufferSize=0.5
+       defaultHeight=55
+       bufferSize=0.05
        alwaysUseDefaultHeight=true
        containerSelector=".table-wrapper"
        key="id"
        as |lead|
      }}
-       <td>{{input value=lead.firstName}}</td>
-       <td>{{input value=lead.lastName}}</td>
-       <td>{{input value=lead.manualVerifiedStatus}}</td>
-       <td>{{input value=lead.createdDate}}</td>
+       <td>{{input value=lead.firstName class="form-control"}}</td>
+       <td>{{input value=lead.lastName class="form-control"}}</td>
+       <td>{{lead.manualVerifiedStatus}}</td>
+       <td>{{lead.createdDate}}</td>
        <td>{{lead.modifiedDate}}</td>
        <td>{{lead.leadType}}</td>
        <td>{{lead.campaignName}}</td>
        <td>{{lead.campaignStatus}}</td>
        <td>{{lead.primaryEmail}}</td>
-       <td>{{lead.modifiedDate}}</td>
-       <td>{{lead.leadType}}</td>
-       <td>{{lead.campaignName}}</td>
-       <td>{{lead.modifiedDate}}</td>
-       <td>{{lead.leadType}}</td>
-       <td>{{lead.campaignName}}</td>
-       <td>{{lead.campaignStatus}}</td>
-       <td>{{lead.primaryEmail}}</td>
-       <td>{{lead.modifiedDate}}</td>
-       <td>{{lead.leadType}}</td>
-       <td>{{lead.campaignName}}</td>
-       <td>{{lead.modifiedDate}}</td>
-       <td>{{lead.leadType}}</td>
-       <td>{{lead.campaignName}}</td>
-       <td>{{lead.campaignStatus}}</td>
-       <td>{{lead.primaryEmail}}</td>
-       <td>{{lead.modifiedDate}}</td>
-       <td>{{lead.leadType}}</td>
-       <td>{{lead.campaignName}}</td>
+       <td>{{lead.unsubscribed}}</td>
+       <td>{{lead.bouncedback}}</td>
+       <td>{{lead.delivered}}</td>
      {{/vertical-collection}}
     </table>
 </div>
