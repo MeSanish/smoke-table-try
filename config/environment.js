@@ -44,7 +44,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.rootURL = '/smoke-table-try';
-    ENV.location = 'hash';
+    ENV.locationType = 'hash';
 
   }
 
