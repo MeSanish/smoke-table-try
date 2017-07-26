@@ -45,6 +45,9 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.rootURL = '/smoke-table-try';
     ENV.locationType = 'hash';
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
 
   }
 
